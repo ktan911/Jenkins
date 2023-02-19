@@ -80,6 +80,13 @@
     "id": "2fc06c20-f1c7-4cdd-a631-3df26957c751",
     "name": "2. Creating Coupon&Check",
     "commands": [{
+      "id": "f3875d48-e0d5-4517-9e69-1b695398989a",
+      "comment": "",
+      "command": "run",
+      "target": "1. Login as Admin",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "12140855-ada8-4631-becc-c42af96c3ff7",
       "comment": "",
       "command": "open",
@@ -297,6 +304,13 @@
     "id": "8cb304e2-fc13-4980-bd99-a80beab8e3cc",
     "name": "3. Find&Delete new Coupon",
     "commands": [{
+      "id": "b470c92a-dc2e-4e1e-9694-7cdd1b96e014",
+      "comment": "",
+      "command": "run",
+      "target": "1. Login as Admin",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "dd7a8779-0bec-4d86-bac7-ae5fc3e2d985",
       "comment": "",
       "command": "open",
@@ -486,6 +500,13 @@
     "id": "3271ab82-f05e-4a0f-80dd-ad01369520df",
     "name": "4. Logout",
     "commands": [{
+      "id": "fdcc7d17-412c-41d4-bbd4-587d10f2e71f",
+      "comment": "",
+      "command": "run",
+      "target": "1. Login as Admin",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "edf9babc-9c0b-4a7d-92b2-7a4f10ad0b25",
       "comment": "",
       "command": "open",
