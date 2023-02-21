@@ -14,6 +14,27 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "7cedd84c-1469-4de4-9998-19a9bce800f5",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//form[contains(@class,'auth')]",
+      "targets": [],
+      "value": "testLogin"
+    }, {
+      "id": "41880f81-15d3-4685-8bd0-e615d1b48382",
+      "comment": "",
+      "command": "echo",
+      "target": "${testLogin}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0feeae7f-959d-410e-91c0-6dd15bd124e7",
+      "comment": "",
+      "command": "if",
+      "target": "${testLogin} > 0",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "44f3cbc7-443b-4311-8382-20115d17299a",
       "comment": "",
       "command": "click",
@@ -75,29 +96,36 @@
       "target": "css=.navbar-btn > .glyphglyphicon",
       "targets": [],
       "value": ""
+    }, {
+      "id": "6a51b5a1-efd9-49c9-9a76-07cc858a98cc",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "2fc06c20-f1c7-4cdd-a631-3df26957c751",
     "name": "2. Creating Coupon&Check",
     "commands": [{
-      "id": "f3875d48-e0d5-4517-9e69-1b695398989a",
+      "id": "e5f8263e-6a17-49ac-9b66-4095b5631bb9",
       "comment": "",
       "command": "run",
       "target": "1. Login as Admin",
       "targets": [],
       "value": ""
     }, {
-      "id": "12140855-ada8-4631-becc-c42af96c3ff7",
+      "id": "0956cfd9-e827-459e-8c27-c52d4bf74d66",
       "comment": "",
-      "command": "open",
-      "target": "/oc-panel/auth/login/",
+      "command": "setWindowSize",
+      "target": "1960x1280",
       "targets": [],
       "value": ""
     }, {
       "id": "95ecd8e8-f0a5-4467-8a14-d1fecee2d12c",
       "comment": "",
       "command": "click",
-      "target": "css=.glyphicon-th",
+      "target": "css=:has(>.glyphicon-th)",
       "targets": [
         ["css=.panel:nth-child(1) .title-txt", "css:finder"],
         ["xpath=//div[@id='accordion']/div/div/h4/a/span[2]", "xpath:idRelative"],
@@ -105,6 +133,13 @@
         ["xpath=//span[contains(.,'eShop')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "ecf60cdc-b819-4384-8b4a-cc6ebca87a5a",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//a[@title='Coupons']",
+      "targets": [],
+      "value": "1000"
     }, {
       "id": "c2bb7e00-5b14-44b1-b5ea-d233973e9383",
       "comment": "",
@@ -255,48 +290,17 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "0ffb63ba-fecf-4d54-9f99-17843ee192b6",
+      "id": "7baef94d-ecce-47bd-aa67-ad4ffdf580ba",
       "comment": "",
-      "command": "click",
-      "target": "name=name",
-      "targets": [
-        ["name=name", "name"],
-        ["css=.form-control:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='name']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c1ba9e6f-1d56-4d52-a556-658956c4efdf",
-      "comment": "",
-      "command": "type",
-      "target": "name=name",
-      "targets": [
-        ["name=name", "name"],
-        ["css=.form-control:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='name']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "${CouponName}"
-    }, {
-      "id": "5852978f-e14f-4ac6-8724-98d581a94f63",
-      "comment": "",
-      "command": "click",
-      "target": "css=.form-inline > .btn",
-      "targets": [
-        ["css=.form-inline > .btn", "css:finder"],
-        ["xpath=//button[@type='submit']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/button", "xpath:idRelative"],
-        ["xpath=//form/button", "xpath:position"]
-      ],
+      "command": "run",
+      "target": "5. Find coupon",
+      "targets": [],
       "value": ""
     }, {
       "id": "41e83204-470e-4716-bb16-3dfc493f655e",
       "comment": "",
       "command": "assertText",
-      "target": "//div[@class='table-responsive']//tbody//tr[1]/td[1]",
+      "target": "xpath=//div[@class='table-responsive']//tbody//tr[1]/td[1]",
       "targets": [],
       "value": "${CouponName}"
     }]
@@ -304,17 +308,17 @@
     "id": "8cb304e2-fc13-4980-bd99-a80beab8e3cc",
     "name": "3. Find&Delete new Coupon",
     "commands": [{
-      "id": "b470c92a-dc2e-4e1e-9694-7cdd1b96e014",
+      "id": "2fe55bd4-cd5b-4630-919f-bdf38c14b0c9",
       "comment": "",
       "command": "run",
       "target": "1. Login as Admin",
       "targets": [],
       "value": ""
     }, {
-      "id": "dd7a8779-0bec-4d86-bac7-ae5fc3e2d985",
+      "id": "abf7c735-4c02-484a-9dbb-916dd9e80bb3",
       "comment": "",
-      "command": "open",
-      "target": "/oc-panel/auth/login/",
+      "command": "setWindowSize",
+      "target": "1960x1280",
       "targets": [],
       "value": ""
     }, {
@@ -330,6 +334,13 @@
       ],
       "value": ""
     }, {
+      "id": "bd4517e9-127f-4269-ba1e-4b63f25cf102",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//a[@title='Coupons']",
+      "targets": [],
+      "value": "1000"
+    }, {
       "id": "dba660fe-c1e7-411e-b1c7-bebef66a980b",
       "comment": "",
       "command": "click",
@@ -342,19 +353,6 @@
       ],
       "value": ""
     }, {
-      "id": "d1f8840a-c58b-4448-826c-2af3a0ae16d8",
-      "comment": "",
-      "command": "click",
-      "target": "name=name",
-      "targets": [
-        ["name=name", "name"],
-        ["css=.form-control:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='name']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "9837b9b6-6213-433a-8cde-48c76b74be4d",
       "comment": "",
       "command": "store",
@@ -362,29 +360,11 @@
       "targets": [],
       "value": "CouponName"
     }, {
-      "id": "d7e1b704-7f98-466e-b7d1-1b35392c1524",
+      "id": "6aae117b-5eda-43c0-a6cc-954497fa2016",
       "comment": "",
-      "command": "type",
-      "target": "name=name",
-      "targets": [
-        ["name=name", "name"],
-        ["css=.form-control:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='name']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "${CouponName}"
-    }, {
-      "id": "30505b8e-9928-4434-a95f-2a6111172107",
-      "comment": "",
-      "command": "click",
-      "target": "css=.form-inline > .btn",
-      "targets": [
-        ["css=.form-inline > .btn", "css:finder"],
-        ["xpath=//button[@type='submit']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/button", "xpath:idRelative"],
-        ["xpath=//form/button", "xpath:position"]
-      ],
+      "command": "run",
+      "target": "5. Find coupon",
+      "targets": [],
       "value": ""
     }, {
       "id": "3cf8ecce-551d-4504-ba63-0d77a560d080",
@@ -428,10 +408,10 @@
     }, {
       "id": "79443a84-8938-4da8-ab16-6e9324fdf3d4",
       "comment": "",
-      "command": "waitForElementVisible",
+      "command": "waitForElementPresent",
       "target": "css=.visible",
       "targets": [],
-      "value": "30000"
+      "value": "2000"
     }, {
       "id": "bb557b1c-4b0d-4fc9-a2c9-431419eeee0e",
       "comment": "",
@@ -451,42 +431,11 @@
       "targets": [],
       "value": "30000"
     }, {
-      "id": "824829bc-7a26-4f1e-b523-a90dfdfe96a4",
+      "id": "909f7e03-5cc4-4729-b490-ca69803af5dd",
       "comment": "",
-      "command": "click",
-      "target": "name=name",
-      "targets": [
-        ["name=name", "name"],
-        ["css=.form-control:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='name']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "6577ce3e-b85f-48b0-8793-450cd2c5ad52",
-      "comment": "",
-      "command": "type",
-      "target": "name=name",
-      "targets": [
-        ["name=name", "name"],
-        ["css=.form-control:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='name']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "${CouponName}"
-    }, {
-      "id": "e15342f9-0857-43ce-95f8-1f00443168cf",
-      "comment": "",
-      "command": "click",
-      "target": "css=.form-inline > .btn",
-      "targets": [
-        ["css=.form-inline > .btn", "css:finder"],
-        ["xpath=//button[@type='submit']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/form/button", "xpath:idRelative"],
-        ["xpath=//form/button", "xpath:position"]
-      ],
+      "command": "run",
+      "target": "5. Find coupon",
+      "targets": [],
       "value": ""
     }, {
       "id": "852b6e15-f9c5-4d41-8ce2-c964d013d762",
@@ -500,17 +449,10 @@
     "id": "3271ab82-f05e-4a0f-80dd-ad01369520df",
     "name": "4. Logout",
     "commands": [{
-      "id": "fdcc7d17-412c-41d4-bbd4-587d10f2e71f",
+      "id": "77554938-7c64-4628-a678-0080bfb5ed58",
       "comment": "",
       "command": "run",
       "target": "1. Login as Admin",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "edf9babc-9c0b-4a7d-92b2-7a4f10ad0b25",
-      "comment": "",
-      "command": "open",
-      "target": "/oc-panel/auth/login/",
       "targets": [],
       "value": ""
     }, {
@@ -541,6 +483,48 @@
       "command": "assertElementPresent",
       "target": "css=.btn-primary-white",
       "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7da2ff48-f29b-4ce4-b00f-cbf9a3bb8052",
+    "name": "5. Find coupon",
+    "commands": [{
+      "id": "cd1223fb-53b1-4d63-a601-e19b85eadc0b",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["name=name", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='name']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac399da0-535c-4753-9368-02afdfad78be",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["name=name", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='name']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${CouponName}"
+    }, {
+      "id": "717475a8-ada1-4d76-bade-2ba49ac7e09b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-inline > .btn",
+      "targets": [
+        ["css=.form-inline > .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
       "value": ""
     }]
   }],
